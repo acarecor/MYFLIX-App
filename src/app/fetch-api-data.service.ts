@@ -11,10 +11,12 @@ const apiUrl = 'https://myflix-movies-2a93844126ef.herokuapp.com/movies';
   providedIn: 'root'
 })
 export class FetchApiDataService {
+// Inject the HttpClient module to the constructor params
+ // This will provide HttpClient to the entire class, making it available via this.http
   constructor(private http: HttpClient){
   }
 
-//Api call for the user registration endpoint
+//API call for the user registration endpoint
   public userRegistration(userDetails: any): Observable<any> {
     console.log(userDetails);
     return this.http.post(apiUrl+ 'users', userDetails).pipe(
@@ -22,7 +24,7 @@ export class FetchApiDataService {
     );
     }
 
-//Api call for the user login endpoint
+//API call for the user login endpoint
   public userLogin(userDetails: any): Observable<any> {
     console.log(userDetails);
     return this.http.post(apiUrl+ 'login', userDetails).pipe(
