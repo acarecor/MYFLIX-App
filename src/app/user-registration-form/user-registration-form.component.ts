@@ -20,6 +20,13 @@ export class UserRegistrationFormComponent implements OnInit {
   email: '',
   birthday: ''
 };
+/**
+ * Called when creating an instance of the class
+ * @param fetchApiData
+ * @param dialogRef
+ * @param snackbar
+ */
+
 
   constructor(
     public fetchApiData: UserRegistrationService,
@@ -34,9 +41,9 @@ export class UserRegistrationFormComponent implements OnInit {
  registerUser(): void {
   this.fetchApiData.userRegistration(this.userData).subscribe((response)=> {
     //logic for a successful user registration goes here(to be implemented)
-    this.dialogRef.close(); //this will close the modal on success!
     console.log(response);
-    this.snackbar.open(response, 'OK', {
+    this.dialogRef.close(); //this will close the modal on success!
+    this.snackbar.open('User registration successful', 'OK', {
       duration:2000
     });
   }, (response)=> {
