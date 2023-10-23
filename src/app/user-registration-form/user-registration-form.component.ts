@@ -16,7 +16,7 @@ export class UserRegistrationFormComponent implements OnInit {
  userData = 
  { 
   username: '',
-  pasword: '',
+  password: '',
   email: '',
   birthday: ''
 };
