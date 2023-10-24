@@ -1,0 +1,18 @@
+$primary: rgb(88, 36, 36);
+$body-bg: Oldlace;
+$secondary: rgb(181, 155, 155);
+$fontcolor:rgb(20, 20, 21);
+
+
+#button-login{
+    
+    background-color:$primary;
+    color: white;
+    
+    }
+.mat-mdc-card {
+        background-color: $body-bg;
+        text-align: center;
+        justify-content: center;
+        padding: 10px;
+    }

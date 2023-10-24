@@ -1,0 +1,26 @@
+$primary: rgb(88, 36, 36);
+$body-bg: Oldlace;
+$secondary: rgb(181, 155, 155);
+$fontcolor:rgb(20, 20, 21);
+
+*{
+    box-sizing: border-box;
+}
+.main-page{
+    height: 100%;
+    font-weight: 400;
+    font-size: 20px;
+    color: $fontcolor;
+    background-color: $secondary;
+    text-align: center;
+    padding: 200px;
+    justify-content: center;
+
+}
+
+#button-login, #button-signup{
+    
+background-color:$primary;
+color: white;
+
+}
