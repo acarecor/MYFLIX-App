@@ -7,7 +7,18 @@ import { UserRegistrationService } from '../fetch-api-data.service';
   styleUrls: ['./movie-card.component.scss']
 })
 export class MovieCardComponent {
-  movie: any[] = [];
+  movies: any[] = [];
   constructor(public fetchApiData: UserRegistrationService) { }
-  
+
+  ngOnInit(): void {
+    this.getMovies();
+  }
+  //fetch data from the Api
+  getMovies(): void {
+    this.fetchApiData.getAllMovies().subscribe((response: any) =>{
+      this.movies = response;
+      console.log(this.movies);
+      return this.movies;
+    });
+  }
 }
