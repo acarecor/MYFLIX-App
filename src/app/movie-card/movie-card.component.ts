@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserRegistrationService } from '../fetch-api-data.service';
 
+
 @Component({
   selector: 'app-movie-card',
   templateUrl: './movie-card.component.html',
@@ -13,7 +14,7 @@ export class MovieCardComponent {
   ngOnInit(): void {
     this.getMovies();
   }
-  //fetch data from the Api
+  //fetch movie data from the Api
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((response: any) =>{
       this.movies = response;
