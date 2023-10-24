@@ -11,7 +11,7 @@ $fontcolor:rgb(20, 20, 21);
     }
 
     .mat-mdc-card {
-        background-color: $body-bg;
-        text-align: center;
-        justify-content: center;
-    }
+        align-items: center;
+        background-color: $body-bg;    
+        padding: 20px;
+        }
