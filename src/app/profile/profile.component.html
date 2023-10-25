@@ -1,10 +1,23 @@
 <app-navbar></app-navbar>
-
+<div><h1>Welcome {{user.username}}</h1></div>
 <div style="display: flex;" >
    <mat-card>
         <mat-card-content>
-            <p>{{user.username}}</p>
-            <p> {{user.email}}</p>
+            <h2>User info</h2>
+            <p>username: {{ user.username }}</p>
+            <p> email: {{ user.email }}</p>
+            <p>birthday: {{user.birthday}}</p>
         </mat-card-content>
     </mat-card>
 </div>
+
+<div style="display: flex;" >
+    <mat-card>
+         <mat-card-content>
+             <h2>Do you want to change your user info?</h2>
+             <p>username: {{ user.username }}</p>
+             <p> email: {{ user.email }}</p>
+             <p>birthday: {{user.birthday}}</p>
+         </mat-card-content>
+     </mat-card>
+ </div>
