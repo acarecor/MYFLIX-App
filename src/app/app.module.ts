@@ -22,6 +22,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { ProfileComponent } from './profile/profile.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { MovieDetailsComponent } from './movie-details/movie-details.component';
 
 
 //routes definition
@@ -41,6 +42,7 @@ const appRoutes: Routes = [
     WelcomePageComponent,
     ProfileComponent,
     NavbarComponent,
+    MovieDetailsComponent,
 
   ],
   imports: [
