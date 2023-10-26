@@ -10,6 +10,7 @@ const apiUrl = 'https://myflix-movies-2a93844126ef.herokuapp.com/';
 @Injectable({
   providedIn: 'root'
 })
+
 export class UserRegistrationService {
 // Inject the HttpClient module to the constructor params
  // This will provide HttpClient to the entire class, making it available via this.http
@@ -100,12 +101,15 @@ export class UserRegistrationService {
   }
 
 // API call to update information from the user
-  editUser(updatedUser: any) : Observable<any> {
-    const username = localStorage.getItem('username');
+  editUser(updatedUser:any) : Observable<any> {
+    
     const token = localStorage.getItem('token');
-    console.log(username);
+    //const user = JSON.parse(localStorage.getItem('user') || '{}');
+    const username = localStorage.getItem('username');
+    //console.log(username);
     return this.http.put(apiUrl + 'users/' +  username , updatedUser, {headers: new HttpHeaders(
       {
+        //'Content-Type':'application/json',
         Authorization: 'Bearer ' + token,
       }
     )}).pipe(map(this.extractResponseData), catchError(this.handleError) 
@@ -116,12 +120,13 @@ export class UserRegistrationService {
   deleteUser() : Observable<any> {
     const username = localStorage.getItem('username');
     const token = localStorage.getItem('token');
-    
-    return this.http.delete(apiUrl + 'users/' +  username , {headers: new HttpHeaders(
+    const user = JSON.stringify(localStorage.getItem('user') || '{}');
+    return this.http.delete(apiUrl + 'users/' + username , {headers: new HttpHeaders(
       {
         Authorization: 'Bearer ' + token,
       }
-    )}).pipe(map(this.extractResponseData), catchError(this.handleError) 
+    ), responseType: "text",
+  }).pipe(map(this.extractResponseData), catchError(this.handleError) 
     );
   }
 
@@ -155,11 +160,6 @@ export class UserRegistrationService {
     )}).pipe(map(this.extractResponseData), catchError(this.handleError) 
     );
   }
-
-  //isFavoriteMovie(movieId: string): boolean {
-    //const user = JSON.parse(localStorage.getItem('user') || '{}');
-    //return user.favorite.indexOf(movieId) >= 0;
-  //}
 
 // Non-typed response extraction
   private extractResponseData(res: any): any
