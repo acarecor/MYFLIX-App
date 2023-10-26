@@ -13,10 +13,9 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./user-update.component.scss']
 })
 export class UserUpdateComponent implements OnInit {
-  user: any = " ";
-  favoritesMovies: any [] = [];
+  user: any = {};
   updatedUser: any = {};
-  //movies: any[] = [];
+  
 
   @Input()
   userData = {
@@ -39,16 +38,16 @@ export class UserUpdateComponent implements OnInit {
   }
 
   updateUserInfo(): void {
-    this.fetchApiData.editUser(this.updatedUser).subscribe((updatedUser) => {
+    this.fetchApiData.editUser(this.updatedUser).subscribe((userData) => {
       
-      localStorage.setItem('user', JSON.stringify(updatedUser));
-      localStorage.setItem('username', updatedUser.username);
+      localStorage.setItem('user', JSON.stringify(userData));
+      localStorage.setItem('username', userData.username);
       //this.user = response;
-      console.log(updatedUser);
-      window.location.reload();
+      //console.log(userData);
+      //window.location.reload();
       //this.dialogRef.close(); //this will close the modal on success!
       this.snackbar.open('User Info  updated', 'OK', {
-        duration:2000});
+        duration:2000}), console.log(this.updatedUser);
       
     }, (response)=> {
       console.log(response.status);
