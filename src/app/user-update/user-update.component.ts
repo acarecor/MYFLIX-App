@@ -34,18 +34,13 @@ export class UserUpdateComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-   
   }
 
   updateUserInfo(): void {
     this.fetchApiData.editUser(this.updatedUser).subscribe((userData) => {
-      
       localStorage.setItem('user', JSON.stringify(userData));
       localStorage.setItem('username', userData.username);
-      //this.user = response;
-      //console.log(userData);
-      //window.location.reload();
-      //this.dialogRef.close(); //this will close the modal on success!
+      window.location.reload();
       this.snackbar.open('User Info  updated', 'OK', {
         duration:2000}), console.log(this.updatedUser);
       
