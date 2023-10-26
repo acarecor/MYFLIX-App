@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserRegistrationService } from '../fetch-api-data.service';
 import { MovieDetailsComponent } from '../movie-details/movie-details.component';
 import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
@@ -11,12 +12,18 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class MovieCardComponent {
   movies: any[] = [];
+  user : any  = {};
+  favoritesMovies: any[] = [];
+  movie: any = '';
+
   constructor(
     public fetchApiData: UserRegistrationService,
-    public dialog: MatDialog) { }
+    public dialog: MatDialog,
+    public snackbar: MatSnackBar ) { }
 
   ngOnInit(): void {
     this.getMovies();
+    this.getFavorites();
   }
   //fetch movie data from the Api
   getMovies(): void {
@@ -36,22 +43,59 @@ export class MovieCardComponent {
   });
   }
 
-  openGenreDescriptionDialog(genreName:string, genre: string): void {
+    openGenreDescriptionDialog(genreName:string, genre: string): void {
     this.dialog.open(MovieDetailsComponent, {
       data: {
         title: genreName,
         content: genre,
       }
-    });
+     });
     }
-  openDirectorBioDialog(directorName:string, directorBio: string): void {
+    openDirectorBioDialog(directorName:string, directorBio: string): void {
       this.dialog.open(MovieDetailsComponent, {
         data: {
           title: directorName,
           content: directorBio,
         }
       });
-      }
+    }
 
- 
+  getFavorites(): void{
+    this.fetchApiData.getFavoritesMovies().subscribe((response:any)=> {
+      if(response){
+      this.favoritesMovies = response;
+      return this.favoritesMovies;
+      } else {
+        return [];
+      }
+   });
+  }    
+
+  addMovieToFav(movieId: string): void {
+    this.fetchApiData.addFavoriteMovie(movieId).subscribe((response: any)=> {
+      this.favoritesMovies = response;
+      console.log(this.favoritesMovies);
+      this.getFavorites();
+      return this.favoritesMovies;
+    });
+  }
+
+  removeMovieFromFav(movieId:string): void {
+    this.fetchApiData.removeFavoriteMovie(movieId).subscribe((response:any)=>{
+      this.favoritesMovies = response;
+      console.log(this.favoritesMovies);
+      return this.favoritesMovies;
+      
+    })
+  }
+
+  isFavorite(id: string): boolean {
+    if(this.favoritesMovies.toString().indexOf(id) > -1){
+      return true;
+    } else {
+      return false;
+    }
 }
+
+}
+
