@@ -21,8 +21,9 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { MatIconModule } from '@angular/material/icon';
 import { ProfileComponent } from './profile/profile.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatToolbarModule} from '@angular/material/toolbar';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
+import { UserUpdateComponent } from './user-update/user-update.component';
 
 
 //routes definition
@@ -43,6 +44,7 @@ const appRoutes: Routes = [
     ProfileComponent,
     NavbarComponent,
     MovieDetailsComponent,
+    UserUpdateComponent,
 
   ],
   imports: [
@@ -59,7 +61,9 @@ const appRoutes: Routes = [
     MatSnackBarModule,
     RouterModule.forRoot(appRoutes),
     MatIconModule,
-    MatToolbarModule
+    MatToolbarModule,
+   
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
