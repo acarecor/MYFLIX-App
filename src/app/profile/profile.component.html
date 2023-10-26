@@ -1,23 +1,23 @@
 <app-navbar></app-navbar>
-<div><h1>Welcome {{user.username}}</h1></div>
-<div style="display: flex;" >
-   <mat-card>
-        <mat-card-content>
-            <h2>User info</h2>
-            <p>username: {{ user.username }}</p>
-            <p> email: {{ user.email }}</p>
-            <p>birthday: {{user.birthday}}</p>
-        </mat-card-content>
-    </mat-card>
+<div>
+  <h1>Welcome {{ user.username }}</h1>
 </div>
+<div style="display: flex">
+  <mat-card>
+    <mat-card-content>
+      <h2>User info</h2>
+      <p>Username: {{ userData.username }}</p>
+      <p>Email: {{ userData.email }}</p>
+      <p>Birthday {{ userData.birthday }}</p>
+      
+    </mat-card-content>
+  </mat-card>
+</div>
+<button mat-raised-button (click)="changeInfo()" color="primary">Change your Information?</button>
 
-<div style="display: flex;" >
-    <mat-card>
-         <mat-card-content>
-             <h2>Do you want to change your user info?</h2>
-             <p>username: {{ user.username }}</p>
-             <p> email: {{ user.email }}</p>
-             <p>birthday: {{user.birthday}}</p>
-         </mat-card-content>
-     </mat-card>
- </div>
+
+<div style="display: flex">
+<h1 class="profile-title">Your Favorite Movies</h1>
+  <div class="movie-card-div" >
+</div>
+  </div>
