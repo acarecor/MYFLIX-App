@@ -18,8 +18,8 @@ export class UserLoginFormComponent implements OnInit  {
   @Input() 
   userData = 
   { 
-   username: '',
-   password: '',
+   "username": "",
+   "password": "",
  };
 
  constructor(
@@ -39,7 +39,7 @@ this.fetchApiData.userLogin(this.userData).subscribe((response)=> {
   //logic for a successful login registration 
   localStorage.setItem('username', response.user.username);
   localStorage.setItem('token', response.token);
-
+  
   this.dialogRef.close(); //this will close the modal on success!
   console.log(response);
   this.snackbar.open('User Login successfull', 'OK', {
