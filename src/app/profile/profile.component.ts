@@ -17,7 +17,9 @@ import { UserUpdateComponent } from '../user-update/user-update.component';
 })
 export class ProfileComponent {
   user: any = {};
-  favoritesMovies: any = '';
+  favoritesMovies: any [] = [];
+  movies: any = {};
+  favoritesMoviesList: any [] = [];
   
 
   userData = { username: '', password: '', email: '', birthday: '', };
@@ -26,7 +28,6 @@ export class ProfileComponent {
     public fetchApiData: UserRegistrationService,
     public snackbar: MatSnackBar,
     private router: Router,
-  
     public dialog: MatDialog,
   
   ) { }
@@ -56,6 +57,7 @@ export class ProfileComponent {
       });
     }
 
+    
   }
 
   

@@ -9,15 +9,18 @@
       <p>Username: {{ userData.username }}</p>
       <p>Email: {{ userData.email }}</p>
       <p>Birthday {{ userData.birthday }}</p>
-      
     </mat-card-content>
   </mat-card>
 </div>
-<button mat-raised-button (click)="changeInfo()" color="primary">Change your Information?</button>
-
-
+<button mat-raised-button (click)="changeInfo()" color="primary">
+  Change your Information?
+</button>
+<h1>Favorites Movies List</h1>
 <div style="display: flex">
-<h1 class="profile-title">Your Favorite Movies</h1>
-  <div class="movie-card-div" >
-</div>
+  <div style="display: flex">
+    <mat-card *ngFor="let movie of favoritesMovies" class="image-container">
+      <img matListItemAvatar src="{{ movie.imagePath }}" />
+      <span matListItemTitle>{{ movie.title }}</span>
+    </mat-card>
   </div>
+</div>
