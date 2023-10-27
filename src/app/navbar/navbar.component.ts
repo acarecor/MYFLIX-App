@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-navbar',
@@ -8,7 +9,8 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent {
  constructor(
- public router: Router
+ public router: Router,
+ public snackbar: MatSnackBar,
  ){}
 
  
@@ -20,4 +22,12 @@ export class NavbarComponent {
     this.router.navigate(['users']);
   }
  
+  onLogout(): void {
+    if (confirm('Are you sure you want to logout')){
+      localStorage.clear();
+      this.router.navigate(['welcome']);
+        this.snackbar.open('Good bye', 'OK', {
+          duration:2000});
+    }
+  }
 }
