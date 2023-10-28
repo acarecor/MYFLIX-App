@@ -4,16 +4,21 @@ $body-bg: Oldlace;
 $secondary:  black;;
 $fontcolor:white;
 
-#button-signup{
-    
-    background-color:$primary;
-    color: white;
-    font-size: medium;
-    }
 
-    .mat-mdc-card {
-        align-items: center;
+    .dialog-card {
+        
         background-color: $body-bg;    
         padding: 20px;
         font-size: medium;
+        }
+    
+    h1{
+        align-items: left;
+    }
+    .close{
+    
+        background-color:$primary;
+        color: white;
+        font-size: medium;
+        
         }

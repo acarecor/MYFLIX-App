@@ -1,0 +1,38 @@
+$primary: #234163;
+$logo-color:#cb861a;
+$body-bg: Oldlace;
+$secondary:  black;;
+$fontcolor:white;
+
+*{
+    box-sizing: border-box;
+}
+.main-page{
+    height: 100%;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: $fontcolor;
+    background-color: $secondary;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+
+}
+
+#button-login, #button-signup{
+    
+background-color:$primary;
+color: #ffffff;
+font-size: large;
+
+}
+.container-logo{
+    justify-content: center;
+    margin-bottom: 50px;
+}
+.logo{
+    height: auto;
+    max-width: 400px;
+    
+}

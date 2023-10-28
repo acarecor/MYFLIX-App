@@ -1,0 +1,73 @@
+$primary: #234163;
+$logo-color: #cb861a;
+$body-bg: Oldlace;
+$secondary: black;
+$fontcolor: white;
+
+* {
+    box-sizing: border-box;
+}
+.profile-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: $fontcolor;
+}
+
+h1, h2{
+    text-align: center;
+}
+
+
+.user-info{
+    color: $secondary;
+    padding: 0 20px;
+}
+
+#change-info-btn {
+    background-color: #234163;
+    color: $fontcolor;
+    font-size: medium;
+    margin-top: 20px;
+}
+
+.favorite-container{
+    background-color: $secondary;
+    color: $fontcolor;
+    font-size: large;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex: 5;
+    
+}
+.avatar{
+   border-radius: 10%;
+   width:200px;
+   height:300px;
+}
+
+.user-info{
+    color: black;
+    margin: 50px;
+    padding: 20px;
+}
+.change-info-btn{
+    background-color: #cb861a ;
+}
+
+@media (max-width: 2500px) {
+    .user-info{
+       max-width: 700px;
+    }
+
+   
+}
+
+@media (max-width: 700px) {
+    .user-info{
+        max-width: 600px;
+     }
+}
+

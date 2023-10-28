@@ -1,0 +1,17 @@
+$primary: #234163;
+$logo-color: #cb861a;
+$body-bg: Oldlace;
+$secondary: black;
+$fontcolor: white;
+
+.button-change {
+  background-color: $primary;
+  color: $fontcolor;
+  font-size: medium;
+}
+
+.change-card-container {
+  background-color: $body-bg;
+  font-size: medium;
+  text-align: center;
+}
