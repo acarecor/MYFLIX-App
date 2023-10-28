@@ -1,15 +1,15 @@
-<mat-card>
-  <mat-card-content>
-    <h2>Do you want to change your user info?</h2>
-    <form>
-      <mat-form-field
+<mat-card class="change-card-container" style="display: flex;justify-content: center;">
+  <mat-card-content >
+    <h2>Do you want to change your information?</h2>
+    <form >
+      <mat-form-field 
         ><input
           matInput
           [(ngModel)]="updatedUser.username"
           placeholder="Username"
           type="text"
           name="username"
-          
+          required
       /></mat-form-field>
       <mat-form-field
         ><input
@@ -18,7 +18,7 @@
           placeholder="Email"
           type="email"
           name="email"
-          
+          required
       /></mat-form-field>
       <mat-form-field>
         <input
@@ -27,7 +27,7 @@
           type="password"
           placeholder="Password"
           name="password"
-          
+          required
       /></mat-form-field>
       <mat-form-field
         ><input
@@ -38,20 +38,21 @@
           name="birthday"
           
       /></mat-form-field>
-      <mat-card-actions>
+      <mat-card-actions style="flex-direction: column;">
         <button
           mat-raised-button
           (click)="updateUserInfo()"
+          class="button-change"
           color="primary"
-          id="button-update-info"
         >
-          Update Info
+          Update 
         </button>
+        <p>or do you want to delete your Account?</p>
         <button
-          mat-raised-button
+        mat-raised-button
           (click)="deleteAccount()"
+          class="button-change"
           color="primary"
-          id="button-delete-account"
         >
           Delete Account
         </button>
