@@ -53,7 +53,7 @@ export class ProfileComponent {
 
     changeInfo(): void {
       this.dialog.open(UserUpdateComponent, {
-        width: '280px'
+        width: '350px'
       });
     }
 
