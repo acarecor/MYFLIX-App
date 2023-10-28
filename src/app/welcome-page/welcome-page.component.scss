@@ -1,7 +1,8 @@
-$primary: rgb(88, 36, 36);
+$primary: #234163;
+$logo-color:#cb861a;
 $body-bg: Oldlace;
-$secondary: rgb(181, 155, 155);
-$fontcolor:rgb(20, 20, 21);
+$secondary:  black;;
+$fontcolor:white;
 
 *{
     box-sizing: border-box;
@@ -9,18 +10,29 @@ $fontcolor:rgb(20, 20, 21);
 .main-page{
     height: 100%;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 1.5rem;
     color: $fontcolor;
     background-color: $secondary;
-    text-align: center;
-    padding: 200px;
+    align-items: center;
     justify-content: center;
+    display: flex;
+    flex-direction: column;
 
 }
 
 #button-login, #button-signup{
     
 background-color:$primary;
-color: white;
+color: #ffffff;
+font-size: large;
 
+}
+.container-logo{
+    justify-content: center;
+    margin-bottom: 50px;
+}
+.logo{
+    height: auto;
+    max-width: 400px;
+    
 }
