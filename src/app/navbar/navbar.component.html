@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 
-<mat-toolbar>
-    <span>MyFlix</span>
-     <a mat-button (click)="toMovies()"> Home</a>
-     <a mat-button (click)="toProfile()"> Profile</a>
-     <a mat-button (click)="onLogout()">Logout</a>
+<mat-toolbar style="display: flex; justify-content: space-between " class="navbar">
+    <a (click)="toMovies()"><img src="../../assets/myflix-logo-black.png" alt="myflix logo" class="logo"></a>
+    <div >
+    <button mat-icon-button (click)="toMovies()"><mat-icon>home</mat-icon></button>
+     <button mat-icon-button (click)="toProfile()"><mat-icon>person</mat-icon></button>
+     <button mat-icon-button (click)="onLogout()"><mat-icon>logout</mat-icon></button>
+    </div>
    </mat-toolbar>
+
