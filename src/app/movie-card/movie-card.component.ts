@@ -34,11 +34,11 @@ export class MovieCardComponent {
     });
   }
   //this function open the  dialog when synopsis button is clicked
-  openMovieDescriptionDialog(synopsis: string): void {
+  openMovieDescriptionDialog(title: string, description: string): void {
   this.dialog.open(MovieDetailsComponent, {
     data: {
-      title: "Description",
-      content: synopsis,
+      title: title,
+      content: description,
     }
   });
   }

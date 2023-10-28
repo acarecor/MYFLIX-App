@@ -38,7 +38,8 @@
         <div class="movie-card-buttons">
           <button
             mat-button
-            (click)="openMovieDescriptionDialog(movie.description)"
+            (click)="openMovieDescriptionDialog(movie.title, 
+            movie.description)"
             class="button-more"
           >
             Synopsis

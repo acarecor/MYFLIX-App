@@ -1,0 +1,24 @@
+$primary: #234163;
+$logo-color:#cb861a;
+$body-bg: Oldlace;
+$secondary:  black;;
+$fontcolor:white;
+
+
+    .dialog-card {
+        
+        background-color: $body-bg;    
+        padding: 20px;
+        font-size: medium;
+        }
+    
+    h1{
+        align-items: left;
+    }
+    .close{
+    
+        background-color:$primary;
+        color: white;
+        font-size: medium;
+        
+        }
