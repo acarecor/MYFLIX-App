@@ -13,7 +13,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class MovieCardComponent {
   movies: any[] = [];
   user : any  = {};
-  favoritesMovies: any[] = [];
+  favMovies: any = [];
   movie: any = '';
 
   constructor(
@@ -36,9 +36,9 @@ export class MovieCardComponent {
 
   getFavorites(): void {
     this.fetchApiData.getFavoritesMovies().subscribe((response:any) => {
-      this.favoritesMovies = response;
-      console.log(this.favoritesMovies)
-      return this.favoritesMovies
+      this.favMovies = response;
+      console.log(this.favMovies)
+      return this.favMovies
     })
   }
   //getFavorites(): void{
@@ -54,18 +54,18 @@ export class MovieCardComponent {
 
   addMovieToFav(movieId: string): void {
     this.fetchApiData.addFavoriteMovie(movieId).subscribe((response: any)=> {
-      this.favoritesMovies = response;
-      console.log(this.favoritesMovies);
+      this.favMovies = response;
+      console.log(this.favMovies);
       this.getFavorites();
-      return this.favoritesMovies;
+      return this.favMovies;
     });
   }
 
   removeMovieFromFav(movieId:string): void {
     this.fetchApiData.removeFavoriteMovie(movieId).subscribe((response:any)=>{
-      this.favoritesMovies = response;
-      console.log(this.favoritesMovies);
-      return this.favoritesMovies;
+      this.favMovies = response;
+      console.log(this.favMovies);
+      return this.favMovies;
       
     })
   }
@@ -73,7 +73,7 @@ export class MovieCardComponent {
   isFavorite(_id: string): boolean {
    
     //if(this.favoritesMovies.toString().indexOf(id) > -1){
-      if(this.favoritesMovies.indexOf(_id) >= 0){
+      if(this.favMovies.indexOf(_id) >= 0){
       return true;
     } else {
       return false;
