@@ -17,20 +17,22 @@
         alt="{{ movie.title }}"
         class="movie-card-img"
       />
-        <div class="favorite-button">
-          <button mat-icon-button style="color:red" 
-          (click)="toggleFavMovie(movie._id)">
+      <div class="favorite-button">
+        <button
+          mat-icon-button
+          style="color: red"
+          (click)="toggleFavMovie(movie._id)"
+        >
           <mat-icon class="fav-icon">
-            {{favMovies.includes(movie._id) ? 'favorite' : 'favorite_border'}}
+            {{ favMovies.includes(movie._id) ? "favorite" : "favorite_border" }}
           </mat-icon>
         </button>
-        </div>
-        <mat-card-actions>
+      </div>
+      <mat-card-actions>
         <div class="movie-card-buttons">
           <button
             mat-button
-            (click)="openMovieDescriptionDialog(movie.title, 
-            movie.description)"
+            (click)="openMovieDescriptionDialog(movie.title, movie.description)"
             class="button-more"
           >
             Synopsis
@@ -40,17 +42,24 @@
           ></div>
           <button
             mat-button
-            (click)="openGenreDescriptionDialog(
+            (click)="
+              openGenreDescriptionDialog(
                 movie.genre.name,
-                movie.genre.description)"
+                movie.genre.description
+              )
+            "
             class="button-more"
           >
             Genre: {{ movie.genre.name }}
           </button>
-          <div style="background-color: rgba(122, 120, 120, 0.635); height: 1px"></div>
+          <div
+            style="background-color: rgba(122, 120, 120, 0.635); height: 1px"
+          ></div>
           <button
             mat-button
-            (click)="openDirectorBioDialog(movie.director.name, movie.director.bio)"
+            (click)="
+              openDirectorBioDialog(movie.director.name, movie.director.bio)
+            "
             class="button-more"
           >
             Director

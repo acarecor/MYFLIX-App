@@ -4,11 +4,10 @@ import { MovieDetailsComponent } from '../movie-details/movie-details.component'
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
-
 @Component({
   selector: 'app-movie-card',
   templateUrl: './movie-card.component.html',
-  styleUrls: ['./movie-card.component.scss']
+  styleUrls: ['./movie-card.component.scss'],
 })
 export class MovieCardComponent {
   movies: any[] = [];
@@ -18,89 +17,53 @@ export class MovieCardComponent {
   constructor(
     public fetchApiData: UserRegistrationService,
     public dialog: MatDialog,
-    public snackbar: MatSnackBar ) { }
+    public snackbar: MatSnackBar
+  ) {}
 
   ngOnInit(): void {
     this.getMovies();
     this.getFavorites();
   }
-  //fetch movie data from the Api
+  //fetch all movies from the Api
   getMovies(): void {
-    this.fetchApiData.getAllMovies().subscribe((response: any) =>{
+    this.fetchApiData.getAllMovies().subscribe((response: any) => {
       this.movies = response;
       return this.movies;
     });
   }
 
+//fetch favorites movies from user
   getFavorites(): void {
-    this.fetchApiData.getFavoritesMovies().subscribe((response:any) => {
+    this.fetchApiData.getFavoritesMovies().subscribe((response: any) => {
       this.favMovies = response;
-      console.log(this.favMovies)
-      return this.favMovies
-    })
+      console.log(this.favMovies);
+      return this.favMovies;
+    });
   }
 
+  //toggle function that add or remove movies from favorites 
   toggleFavMovie(movieId: string): void {
-    if(!this.favMovies.includes(movieId)) {
-    //if(this.favMovies.toString().indexOf(movieId) > -1){
-      this.fetchApiData.addFavoriteMovie(movieId).subscribe((response: any)=> {
+    //conditional  if the movieId is not in the favorite array , then it can be added 
+    if (!this.favMovies.includes(movieId)) {
+      this.fetchApiData.addFavoriteMovie(movieId).subscribe((response: any) => {
         console.log(response);
         this.favMovies = response.favoritesMovies;
-        this.snackbar.open('Movie added', 'OK', {duration:2000});
-    })}
-    //error: (error)=> {
-      //console.log(error);
-       //this.snackbar.open(error, 'OK', {duration: 2000});}
-     else {
-  this.fetchApiData.removeFavoriteMovie(movieId).subscribe((response:any)=>{
-    console.log(response);   
-    this.favMovies = response.favoritesMovies;
-    this.snackbar.open('Movie removed from favorite', 'OK', {duration:2000});
-   }) }
+        this.snackbar.open('Movie added to favorites', 'OK', {
+          duration: 2000,
+        });
+      });
+    } else {
+      this.fetchApiData
+        .removeFavoriteMovie(movieId)
+        .subscribe((response: any) => {
+          console.log(response);
+          this.favMovies = response.favoritesMovies;
+          this.snackbar.open('Movie removed from favorites', 'OK', {
+            duration: 2000,
+          });
+        });
+    }
   }
-  // error:(e)=> {
-    //console.log(e);
-    //this.snackbar.open(e, 'OK', {duration: 2000});
-  
-  //getFavorites(): void{
-    //this.fetchApiData.getFavoritesMovies().subscribe((response:any)=> {
-      //if(response){
-      //this.favoritesMovies = response;
-      //return this.favoritesMovies;
-      //} else {
-        //return [];
-     // }
-   //});
-  //}    
-
-  //addMovieToFav(movieId: string): void {
-    //this.fetchApiData.addFavoriteMovie(movieId).subscribe((response: any)=> {
-      //this.favMovies = response;
-      //console.log(this.favMovies);
-      //this.getFavorites();
-      //return this.favMovies;
-    //});
-  //}
-
-  //removeMovieFromFav(movieId:string): void {
-   // this.fetchApiData.removeFavoriteMovie(movieId).subscribe((response:any)=>{
-   //   this.favMovies = response;
-     // console.log(this.favMovies);
-      //return this.favMovies;
-      
-    //})
-  //}
-
-  //isFavorite(_id: string): boolean {
-   
-    //if(this.favoritesMovies.toString().indexOf(id) > -1){
-    //  if(this.favMovies.indexOf(_id) >= 0){
-      //return true;
-    //} else {
-      //return false;
-    //}
-//}
-
 
   //this function open the  dialog when synopsis button is clicked
   openMovieDescriptionDialog(title: string, description: string): void {
@@ -108,25 +71,27 @@ export class MovieCardComponent {
       data: {
         title: title,
         content: description,
-      }
+      },
     });
-    }
-  
-      openGenreDescriptionDialog(genreName:string, genre: string): void {
-      this.dialog.open(MovieDetailsComponent, {
-        data: {
-          title: genreName,
-          content: genre,
-        }
-       });
-      }
-      openDirectorBioDialog(directorName:string, directorBio: string): void {
-        this.dialog.open(MovieDetailsComponent, {
-          data: {
-            title: directorName,
-            content: directorBio,
-          }
-        });
-      }
-}
+  }
 
+  //this function open the  dialog when genre button is clicked
+  openGenreDescriptionDialog(genreName: string, genre: string): void {
+    this.dialog.open(MovieDetailsComponent, {
+      data: {
+        title: genreName,
+        content: genre,
+      },
+    });
+  }
+
+  //this function open the  dialog when director button is clicked
+  openDirectorBioDialog(directorName: string, directorBio: string): void {
+    this.dialog.open(MovieDetailsComponent, {
+      data: {
+        title: directorName,
+        content: directorBio,
+      },
+    });
+  }
+}
