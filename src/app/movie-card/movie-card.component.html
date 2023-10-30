@@ -17,7 +17,7 @@
         alt="{{ movie.title }}"
         class="movie-card-img"
       />
-      <mat-card-actions style="display: flex; flex-direction: column;">
+     
         <div class="favorite-button">
           <button
           style="justify-content: end;"
@@ -35,6 +35,7 @@
             <mat-icon style="color: red">favorite</mat-icon>
           </button>
         </div>
+        <mat-card-actions style="display: flex; flex-direction: column;">
         <div class="movie-card-buttons">
           <button
             mat-button
@@ -48,7 +49,7 @@
             style="background-color: rgba(122, 120, 120, 0.635); height: 1px"
           ></div>
           <button
-            mat-button
+            mat-icon-button
             (click)="openGenreDescriptionDialog(
                 movie.genre.name,
                 movie.genre.description)"
@@ -58,7 +59,7 @@
           </button>
           <div style="background-color: rgba(122, 120, 120, 0.635); height: 1px"></div>
           <button
-            mat-button
+            mat-icon-button
             (click)="openDirectorBioDialog(movie.director.name, movie.director.bio)"
             class="button-more"
           >

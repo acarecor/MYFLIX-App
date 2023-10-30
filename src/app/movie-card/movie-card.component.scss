@@ -10,8 +10,7 @@
 }
 
 .movie-card {
-  display: flex 1  auto;
-  flex-direction: column;
+  display: block;
   justify-content: center;
   margin: 25px;
 }
@@ -35,7 +34,6 @@ h1{
 }
 
 .movie-card-buttons {
-    display: flex;
     flex-direction: column;
     
 }
