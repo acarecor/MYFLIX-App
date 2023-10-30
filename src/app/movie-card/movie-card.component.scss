@@ -11,7 +11,7 @@
 
 .movie-card {
   display: block;
-  justify-content: center;
+  text-align: center;
   margin: 25px;
 }
 
@@ -34,7 +34,7 @@ h1{
 }
 
 .movie-card-buttons {
-    flex-direction: column;
+    display: block;
     
 }
 .button-more{

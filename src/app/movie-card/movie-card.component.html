@@ -21,21 +21,21 @@
         <div class="favorite-button">
           <button
           style="justify-content: end;"
-            mat-button
+            mat-icon-button
             *ngIf="!isFavorite(movie._id)"
             (click)="addMovieToFav(movie._id)"
           >
             <mat-icon>favorite_border</mat-icon>
           </button>
           <button
-            mat-button
+            mat-icon-button
             *ngIf="isFavorite(movie._id)"
             (click)="removeMovieFromFav(movie._id)"
           >
             <mat-icon style="color: red">favorite</mat-icon>
           </button>
         </div>
-        <mat-card-actions style="display: flex; flex-direction: column;">
+        <mat-card-actions>
         <div class="movie-card-buttons">
           <button
             mat-button
