@@ -7,7 +7,7 @@
   <div >
     <mat-card class="user-info">
       <mat-card-content >
-        <h2>User info</h2>
+        <h2>Your information</h2>
         <p>Username: {{ userData.username }}</p>
         <p>Email: {{ userData.email }}</p>
         <p>Birthday {{ userData.birthday }}</p>
@@ -23,7 +23,7 @@
   </div>
   <div class="favorite-container">
     <div *ngFor="let movie of favoritesMovies">
-      <div style="margin-bottom: 60px; padding: 10px";>
+      <div style="margin-bottom: 60px; padding: 10px">
         <img mat-card-avatar src="{{ movie.imagePath }}" class="avatar" />
         <span mat-card-title>{{ movie.title }}</span> 
       </div>
