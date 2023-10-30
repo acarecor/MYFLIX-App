@@ -21,7 +21,7 @@
           <button mat-icon-button color="warm" 
           (click)="toggleFavMovie(movie._id)">
           <mat-icon>
-            {{favMovies.include(movie._id) ? 'favorite' : 'favorite_border'}}
+            {{favMovies.indexOf(movie._id) >= 0 ? 'favorite' : 'favorite_border'}}
           </mat-icon>
         </button>
         </div>
