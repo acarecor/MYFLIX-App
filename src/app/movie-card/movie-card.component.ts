@@ -41,18 +41,18 @@ export class MovieCardComponent {
   }
 
   toggleFavMovie(movieId: string): void {
-    //if(!this.favMovies.includes(movieId))
-    if(this.favMovies.toString().indexOf(movieId) > -1){
-      this.fetchApiData.removeFavoriteMovie(movieId).subscribe((response: any)=> {
+    if(!this.favMovies.includes(movieId)) {
+    //if(this.favMovies.toString().indexOf(movieId) > -1){
+      this.fetchApiData.addFavoriteMovie(movieId).subscribe((response: any)=> {
         console.log(response);
-        this.favMovies = response;
-        this.snackbar.open('Movie removed from favorite', 'OK', {duration:2000});
+        this.favMovies = response.favoritesMovies;
+        this.snackbar.open('Movie added', 'OK', {duration:2000});
     })}
     //error: (error)=> {
       //console.log(error);
        //this.snackbar.open(error, 'OK', {duration: 2000});}
      else {
-  this.fetchApiData.addFavoriteMovie(movieId).subscribe((response:any)=>{
+  this.fetchApiData.removeFavoriteMovie(movieId).subscribe((response:any)=>{
     console.log(response);   
     this.favMovies = response;
     this.snackbar.open('Movie added to favorite', 'OK', {duration:2000});

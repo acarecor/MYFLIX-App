@@ -18,10 +18,10 @@
         class="movie-card-img"
       />
         <div class="favorite-button">
-          <button mat-icon-button color="warm" 
+          <button mat-icon-button style="color:red" 
           (click)="toggleFavMovie(movie._id)">
-          <mat-icon>
-            {{favMovies.indexOf(movie._id) >= 0 ? 'favorite' : 'favorite_border'}}
+          <mat-icon class="fav-icon">
+            {{favMovies.includes(movie._id) ? 'favorite' : 'favorite_border'}}
           </mat-icon>
         </button>
         </div>
