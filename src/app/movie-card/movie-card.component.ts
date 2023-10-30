@@ -36,7 +36,7 @@ export class MovieCardComponent {
 
   getFavorites(): void {
     this.fetchApiData.getFavoritesMovies().subscribe((response:any) => {
-      this.favoritesMovies = response.favoritesMovies;
+      this.favoritesMovies = response;
       console.log(this.favoritesMovies)
       return this.favoritesMovies
     })
@@ -70,8 +70,10 @@ export class MovieCardComponent {
     })
   }
 
-  isFavorite(id: string): boolean {
-    if(this.favoritesMovies.toString().indexOf(id) > -1){
+  isFavorite(_id: string): boolean {
+   
+    //if(this.favoritesMovies.toString().indexOf(id) > -1){
+      if(this.favoritesMovies.indexOf(_id) >= 0){
       return true;
     } else {
       return false;
