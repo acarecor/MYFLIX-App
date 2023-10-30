@@ -29,6 +29,7 @@ h1, h2{
     color: $fontcolor;
     font-size: medium;
     margin-top: 20px;
+    padding: 1.5em;
 }
 
 .favorite-container{
@@ -38,12 +39,8 @@ h1, h2{
     text-align: center;
     display: flex;
     flex-wrap: wrap;
-    justify-content:left;
-    margin-left: 40px;
-    
-    
-    
-    
+    justify-content:space-evenly;
+    margin: 20px;
 }
 .avatar{
    border-radius: 10%;
@@ -56,9 +53,7 @@ h1, h2{
     margin: 50px;
     padding: 20px;
 }
-.change-info-btn{
-    background-color: #cb861a ;
-}
+
 
 @media (max-width: 2500px) {
     .user-info{
