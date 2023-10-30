@@ -13,13 +13,17 @@
   display: block;
   text-align: center;
   margin: 25px;
+  max-width: 320px;
 }
-
+.movie-card-content{
+    padding: 10px;
+    text-align: center;
+  }
 .movie-card-header {
+    display: block;
     padding-left: 20px;
     margin-top: 10px;
     margin-bottom: 10px;
-    justify-content: left;
 }
 
 h1{
@@ -42,15 +46,12 @@ h1{
     font-size: medium;
     width: 320px;
     text-align: left;
-    color: rgb(32, 32, 32);
+    color: rgb(62, 59, 59);
 }
 
-.movie-card-content{
-  padding: 10px;
-  text-align: center;
-}
+
 .favorite-button{
-    padding-left: 90%;
+    padding-left: 80%;
     
 }
 
