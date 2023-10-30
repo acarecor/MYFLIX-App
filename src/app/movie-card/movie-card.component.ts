@@ -12,7 +12,6 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class MovieCardComponent {
   movies: any[] = [];
-  user : any  = {};
   favMovies: any = [];
   movie: any = '';
 
@@ -29,7 +28,6 @@ export class MovieCardComponent {
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((response: any) =>{
       this.movies = response;
-      console.log(this.movies);
       return this.movies;
     });
   }
@@ -41,6 +39,28 @@ export class MovieCardComponent {
       return this.favMovies
     })
   }
+
+  toggleFavMovie(movieId: string): void {
+    if(!this.favMovies.includes(movieId)){
+      this.fetchApiData.addFavoriteMovie(movieId).subscribe((response: any)=> {
+        console.log(response);
+        this.favMovies = response;
+        this.snackbar.open('Movie added to favorite', 'OK', {duration:2000});
+    })}
+    //error: (error)=> {
+      //console.log(error);
+       //this.snackbar.open(error, 'OK', {duration: 2000});}
+     else {
+  this.fetchApiData.removeFavoriteMovie(movieId).subscribe((response:any)=>{
+    console.log(response);   
+    this.favMovies = response;
+    this.snackbar.open('Movie removed from favorite', 'OK', {duration:2000});
+   }) }
+  }
+  // error:(e)=> {
+    //console.log(e);
+    //this.snackbar.open(e, 'OK', {duration: 2000});
+  
   //getFavorites(): void{
     //this.fetchApiData.getFavoritesMovies().subscribe((response:any)=> {
       //if(response){
@@ -52,33 +72,33 @@ export class MovieCardComponent {
    //});
   //}    
 
-  addMovieToFav(movieId: string): void {
-    this.fetchApiData.addFavoriteMovie(movieId).subscribe((response: any)=> {
-      this.favMovies = response;
-      console.log(this.favMovies);
-      this.getFavorites();
-      return this.favMovies;
-    });
-  }
+  //addMovieToFav(movieId: string): void {
+    //this.fetchApiData.addFavoriteMovie(movieId).subscribe((response: any)=> {
+      //this.favMovies = response;
+      //console.log(this.favMovies);
+      //this.getFavorites();
+      //return this.favMovies;
+    //});
+  //}
 
-  removeMovieFromFav(movieId:string): void {
-    this.fetchApiData.removeFavoriteMovie(movieId).subscribe((response:any)=>{
-      this.favMovies = response;
-      console.log(this.favMovies);
-      return this.favMovies;
+  //removeMovieFromFav(movieId:string): void {
+   // this.fetchApiData.removeFavoriteMovie(movieId).subscribe((response:any)=>{
+   //   this.favMovies = response;
+     // console.log(this.favMovies);
+      //return this.favMovies;
       
-    })
-  }
+    //})
+  //}
 
-  isFavorite(_id: string): boolean {
+  //isFavorite(_id: string): boolean {
    
     //if(this.favoritesMovies.toString().indexOf(id) > -1){
-      if(this.favMovies.indexOf(_id) >= 0){
-      return true;
-    } else {
-      return false;
-    }
-}
+    //  if(this.favMovies.indexOf(_id) >= 0){
+      //return true;
+    //} else {
+      //return false;
+    //}
+//}
 
 
   //this function open the  dialog when synopsis button is clicked
