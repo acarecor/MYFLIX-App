@@ -135,8 +135,6 @@ export class UserRegistrationService {
     const user = JSON.stringify(localStorage.getItem("user") || '{}');
     const token = localStorage.getItem("token");
     const username = localStorage.getItem("username");
-    //user.favoritesMovies.push(movieId);
-    //localStorage.setItem("user", JSON.stringify(user));
 
     return this.http.post(apiUrl + 'users/' + username + '/movies/' + movieId, {},  { headers: new HttpHeaders({
       'Content-Type':'application/json',
@@ -148,10 +146,8 @@ export class UserRegistrationService {
   }
   // API call to remove a Movie from the Favorites list  of the user
   removeFavoriteMovie(movieId: string) : Observable<any> {
-    
     const token = localStorage.getItem('token');
     const username = localStorage.getItem("username");
-    
     return this.http.delete(apiUrl + 'users/' +  username + '/movies/' + movieId, {headers: new HttpHeaders(
       {
         //'Content-Type':'application/json',

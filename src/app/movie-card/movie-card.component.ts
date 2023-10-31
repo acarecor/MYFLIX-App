@@ -24,7 +24,10 @@ export class MovieCardComponent {
     this.getMovies();
     this.getFavorites();
   }
-  //fetch all movies from the Api
+
+  /**
+   * Get all movies from the Api
+   */
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((response: any) => {
       this.movies = response;
@@ -32,7 +35,9 @@ export class MovieCardComponent {
     });
   }
 
-//fetch favorites movies from user
+  /**
+   * Get list of the  favorites movies from user
+   */
   getFavorites(): void {
     this.fetchApiData.getFavoritesMovies().subscribe((response: any) => {
       this.favMovies = response;
@@ -41,7 +46,10 @@ export class MovieCardComponent {
     });
   }
 
-  //toggle function that add or remove movies from favorites 
+  /**
+   * toggle function that add or remove movies from favorites list 
+   * @param movieId 
+   */
   toggleFavMovie(movieId: string): void {
     //conditional  if the movieId is not in the favorite array , then it can be added 
     if (!this.favMovies.includes(movieId)) {
@@ -65,7 +73,11 @@ export class MovieCardComponent {
     }
   }
 
-  //this function open the  dialog when synopsis button is clicked
+  /**
+   * this function opens the dialog with the movie description (synopsis) when the button is clicked
+   * @param title 
+   * @param description 
+   */
   openMovieDescriptionDialog(title: string, description: string): void {
     this.dialog.open(MovieDetailsComponent, {
       data: {
@@ -75,7 +87,11 @@ export class MovieCardComponent {
     });
   }
 
-  //this function open the  dialog when genre button is clicked
+  /**
+   * this function open the  dialog with genre description when  button is clicked
+   * @param genreName 
+   * @param genre 
+   */
   openGenreDescriptionDialog(genreName: string, genre: string): void {
     this.dialog.open(MovieDetailsComponent, {
       data: {
@@ -85,7 +101,11 @@ export class MovieCardComponent {
     });
   }
 
-  //this function open the  dialog when director button is clicked
+  /**
+   * this function open the  dialog with director bio when button is clicked
+   * @param directorName 
+   * @param directorBio 
+   */
   openDirectorBioDialog(directorName: string, directorBio: string): void {
     this.dialog.open(MovieDetailsComponent, {
       data: {
