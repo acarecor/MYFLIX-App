@@ -1,28 +1,48 @@
-# MyFlixAngularClient
-
+# MYFLIX-Angular-App
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.6.
 
-## Development server
+## Objective
+Build a client-side application using Angular , which is based on the existing server-side code (RestAPI: Movi_API and the database in Atlas: MongoDB).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Technologies Used 
 
-## Code scaffolding
+* Angular
+* TypeScrip
+* Angular Material
+* MongoDB: NoSQL database (Atlas)
+* Express
+* Node.js and npm package
+* Typedoc
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Design Criteria
+* The user will be able to access information about movies such as description, director, genre among others.
+* The user will be able to create a profile where they can add their favorite movies to a list and save them.
 
-## Build
+### Key Features
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+* The application displays a welcome view where users can log in or register an account.
+* Once authenticated, the user can view all movies.
+* Users can view additional information about a movie:
+- a Button that when clicked displays the movie synopsis 2.
+- A button that displays the director's biography when clicked.
+-  A button that, when clicked, displays the genre description of the movie.
+4. The user can add/remove movies to his favorites list. 
+* Users can update their user information or delete their account.
 
-## Running unit tests
+### Screenshots 
+<table>
+<tr>
+<td><img href="https://drive.google.com/file/d/1IKPNyTXaYo9CQlPr5bipTNjKoVBmXqI1/view?usp=drive_link"></td>
+<td><img href="https://drive.google.com/file/d/10Cgb5_181YWmfDIV67b0rc6DgDLGkJ7g/view?usp=drive_link" alt="login view"></td>
+</tr>
+<tr>
+<td><img href="https://drive.google.com/file/d/1YUfLUj5WU5smhWgp_BiF7SS5DNd2wEIo/view?usp=drive_link"></td>
+<td><img href="https://drive.google.com/file/d/1l29Md3pt3PdZeQ1ZmGwcpvfo0FZb_fKu/view?usp=sharing"></td>
+</tr>
+## Running the app
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-# MYFLIX-Angular-App
+1. `git clone https://github.com/acarecor/MYFLIX-App 
+2. `cd [PROJECT_FOLDER_NAME]`
+3. `npm install @angular/cli`
+4. `ng serve`
+5. Go to browser localhost:4200
