@@ -31,20 +31,13 @@ Build a client-side application using Angular , which is based on the existing s
 
 ### Screenshots 
 
-<table>
-<tr>
-<td><img src="" alt="welcome view"></td>
-<td><img src="" alt="login view"></td>
-</tr>
-<tr>
-<td><img src="" alt="movies view"></td>
-<td><img src="" alt="profile view"></td>
-</tr>
 
-## Running the app
 
-1. `git clone https://github.com/acarecor/MYFLIX-App 
+
+### Running the app
+
+1. `git clone https://github.com/acarecor/MYFLIX-App ` 
 2. `cd [PROJECT_FOLDER_NAME]`
 3. `npm install @angular/cli`
 4. `ng serve`
-5. Go to browser localhost:4200
+5. `Go to browser localhost:4200 `
