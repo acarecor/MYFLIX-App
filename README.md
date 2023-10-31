@@ -31,7 +31,26 @@ Build a client-side application using Angular , which is based on the existing s
 
 ### Screenshots 
 
-
+<table>
+    <tr>
+        <td>
+            <img src="img/welcome-view.png" alt="A Screenshot of the welcome view" width="400px">
+        </td>
+        <td>
+            <img src="img/login-view.png" alt="A Screenshot of the login view" width="400px" >
+        </td>
+    </tr>
+        <tr>
+        <td>
+            <img src="img/movies-view.png" alt="A Screenshot of the movies view" width="400px">
+        </td>
+        </tr>
+        <tr>
+        <td>
+            <img src="img/profile-view.png" alt="A Screenshot of the profile view" width="400px" >
+        </td>
+        </tr>
+</table>
 
 
 ### Running the app
