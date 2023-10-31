@@ -30,7 +30,16 @@ Build a client-side application using Angular , which is based on the existing s
 * Users can update their user information or delete their account.
 
 ### Screenshots 
-
+<table>
+    <tr>
+     <td>
+        <img src="https://drive.google.com/file/d/1IKPNyTXaYo9CQlPr5bipTNjKoVBmXqI1/view?usp=drive_link" alt="welcome view" width="400px">
+    </td>
+    <td>
+        <img src="https://drive.google.com/file/d/10Cgb5_181YWmfDIV67b0rc6DgDLGkJ7g/view?usp=drive_link" alt="login view" width="400px" >
+    </td>
+</tr>
+</table>
 
 
 
