@@ -54,8 +54,8 @@ Build a client-side application using Angular , which is based on the existing s
 
 ### Running the app
 
-1. `git clone https://github.com/acarecor/MYFLIX-App `
-2. `cd [PROJECT_FOLDER_NAME]`
-3. `npm install @angular/cli`
+1. clone the repo: `git clone https://github.com/acarecor/MYFLIX-App `
+2. navigate to the project folder : `cd [PROJECT_FOLDER_NAME]`
+3. run `npm install @angular/cli`
 4. `ng serve`
 5. `Go to browser localhost:4200 `
