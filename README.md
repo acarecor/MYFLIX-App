@@ -30,15 +30,17 @@ Build a client-side application using Angular , which is based on the existing s
 * Users can update their user information or delete their account.
 
 ### Screenshots 
+
 <table>
 <tr>
-<td><img href="https://drive.google.com/file/d/1IKPNyTXaYo9CQlPr5bipTNjKoVBmXqI1/view?usp=drive_link"></td>
-<td><img href="https://drive.google.com/file/d/10Cgb5_181YWmfDIV67b0rc6DgDLGkJ7g/view?usp=drive_link" alt="login view"></td>
+<td><img src="https://drive.google.com/file/d/1IKPNyTXaYo9CQlPr5bipTNjKoVBmXqI1/view?usp=drive_link"></td>
+<td><img src="https://drive.google.com/file/d/10Cgb5_181YWmfDIV67b0rc6DgDLGkJ7g/view?usp=drive_link" alt="login view"></td>
 </tr>
 <tr>
-<td><img href="https://drive.google.com/file/d/1YUfLUj5WU5smhWgp_BiF7SS5DNd2wEIo/view?usp=drive_link"></td>
-<td><img href="https://drive.google.com/file/d/1l29Md3pt3PdZeQ1ZmGwcpvfo0FZb_fKu/view?usp=sharing"></td>
+<td><img src="https://drive.google.com/file/d/1YUfLUj5WU5smhWgp_BiF7SS5DNd2wEIo/view?usp=drive_link"></td>
+<td><img src="https://drive.google.com/file/d/1l29Md3pt3PdZeQ1ZmGwcpvfo0FZb_fKu/view?usp=sharing"></td>
 </tr>
+
 ## Running the app
 
 1. `git clone https://github.com/acarecor/MYFLIX-App 
