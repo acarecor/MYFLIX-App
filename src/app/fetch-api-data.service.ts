@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
 
 //Declaring the api url that will provide data for the client app
 
-const apiUrl = 'https://myflix-movies-2a93844126ef.herokuapp.com/';
+const apiUrl = 'https://movie-api-j617.onrender.com';
 @Injectable({
   providedIn: 'root'
 })
